@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="d-flex flex-column align-items-center">
+    <h1>Current Count: {{ (count$ | async) }}</h1>
+    <app-increment-button [by]="1"
+                          [label]="'More'"></app-increment-button>
+    <app-increment-button [by]="-1"
+                          [label]="'Less'"></app-increment-button>
+    <button class="btn btn-outline-primary"
+            (click)="reset()">Reset</button>
+  </div>
+</div>

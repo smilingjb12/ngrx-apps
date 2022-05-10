@@ -1,0 +1,12 @@
+<div class="d-flex mx-auto w-50 flex-column">
+  <input type="text"
+         class="form-control"
+         placeholder="What needs to be done?"
+         (keydown.enter)="onEnterPressed()"
+         [attr.disabled]="(loadingItems$ | async) ? 'disabled' : null"
+         [(ngModel)]="newTodo" />
+  <div class="text-center mt-2"
+       *ngIf="loadingItems$ | async">Loading...</div>
+  <app-todo-list></app-todo-list>
+  <app-todo-stats class="mt-1"></app-todo-stats>
+</div>

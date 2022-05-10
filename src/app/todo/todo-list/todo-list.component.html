@@ -1,0 +1,17 @@
+<ul class="list-group mt-3">
+  <li class="list-group-item d-flex flex-row align-items-center justify-content-between"
+      [class.text-muted]="todo.isDone"
+      (click)="toggleDone(todo)"
+      *ngFor="let todo of todos$ | async">
+    <div class="d-flex flex-row align-items-center">
+      <input class="form-check-input me-1"
+             type="checkbox"
+             [ngModel]="todo.isDone"
+             (change)="toggleDone(todo)">
+      <div>{{ todo.text }}</div>
+    </div>
+
+    <div class="btn btn-danger remove-item-btn"
+         (click)="removeItem($event, todo)">Remove</div>
+  </li>
+</ul>

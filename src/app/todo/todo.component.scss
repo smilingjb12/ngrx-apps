@@ -1,0 +1,11 @@
+.remove-item-btn {
+  visibility: collapse;
+}
+
+.list-group-item {
+  &:hover {
+    .remove-item-btn {
+      visibility: visible;
+    }
+  }
+}
